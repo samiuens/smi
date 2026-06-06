@@ -1,0 +1,3 @@
+{
+  smi = import ./smi.nix;
+}
