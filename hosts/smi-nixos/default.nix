@@ -52,7 +52,7 @@
     # ── Tooling ──────────────────────────────────────────────────────────────
     nh = {
       enable = true;
-      flakeDir = "/home/smi/Development/nix/smi";
+      flakeDir = "/home/smi/nix/nixos";
     };
 
     # ── Boot ──────────────────────────────────────────────────────────────────
