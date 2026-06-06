@@ -2,6 +2,7 @@
   description = "smi's nixos configuration";
 
   inputs = {
+    # For local debugging: --override-input nix path:../flake
     nix.url = "github:samiuens/flake";
     nixpkgs.follows = "nix/nixpkgs";
     home-manager.follows = "nix/home-manager";
