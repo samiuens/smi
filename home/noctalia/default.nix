@@ -1,5 +1,4 @@
-_:
-{
+_: {
   smi.desktop.noctalia.settings =
     import ./bar.nix
     // import ./dock.nix
