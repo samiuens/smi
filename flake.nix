@@ -16,21 +16,65 @@
     };
     nix-flatpak.follows = "nix/nix-flatpak";
     nix-index-database.follows = "nix/nix-index-database";
+    git-hooks.follows = "nix/git-hooks";
   };
 
   outputs =
     {
       self,
       nix,
+      nixpkgs,
+      git-hooks,
       ...
     }@inputs:
     let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+      pkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
+
       userRegistry = import ./users;
       mkHost = nix.lib.mkHost { inherit inputs self userRegistry; } ./hosts;
+
+      pre-commit-checkFor = forAllSystems (
+        system:
+        git-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            nixfmt.enable = true;
+            statix.enable = true;
+            deadnix.enable = true;
+            nil.enable = true;
+          };
+        }
+      );
     in
     {
       nixosConfigurations = {
         "smi-nixos" = mkHost "smi-nixos";
       };
+
+      formatter = forAllSystems (system: pkgsFor.${system}.nixfmt);
+
+      checks = forAllSystems (system: {
+        pre-commit-check = pre-commit-checkFor.${system};
+      });
+
+      devShells = forAllSystems (system: {
+        default = pkgsFor.${system}.mkShell {
+          inherit (pre-commit-checkFor.${system}) shellHook;
+          buildInputs =
+            pre-commit-checkFor.${system}.enabledPackages
+            ++ (with pkgsFor.${system}; [
+              nixd
+              nil
+              statix
+              deadnix
+              nixfmt
+            ]);
+        };
+      });
     };
 }

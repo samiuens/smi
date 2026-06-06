@@ -232,6 +232,10 @@
           "nix",
           "disko"
         ],
+        "git-hooks": [
+          "nix",
+          "git-hooks"
+        ],
         "home-manager": [
           "nix",
           "home-manager"
@@ -253,10 +257,7 @@
           "nix",
           "noctalia"
         ],
-        "zen-browser": [
-          "nix",
-          "zen-browser"
-        ]
+        "zen-browser": "zen-browser_2"
       }
     },
     "systems": {
@@ -314,6 +315,29 @@
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "rev": "d93443c0f6fdb3b179bed68856f322dba4842612",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "type": "github"
+      }
+    },
+    "zen-browser_2": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780567926,
+        "narHash": "sha256-LVaiAnBwgr2YotaIlrcwCgmbwHsE2ccegRztLjur/d4=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "eea9ae34eb9011aee9b8ce8ee2bc2dd111ee8285",
         "type": "github"
       },
       "original": {
