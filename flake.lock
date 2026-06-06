@@ -111,15 +111,14 @@
         "nix-flatpak": "nix-flatpak",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
-        "noctalia": "noctalia",
-        "zen-browser": "zen-browser"
+        "noctalia": "noctalia"
       },
       "locked": {
-        "lastModified": 1780676784,
-        "narHash": "sha256-XrVfNV65F1UfyVvFVx+jRo7oJyxi38aVbCYR4U7slwY=",
+        "lastModified": 1780739404,
+        "narHash": "sha256-rT73mr0b+F4tKBikO/Phn4Wx+CMyQNiWJbqa3/Y46dg=",
         "owner": "samiuens",
         "repo": "flake",
-        "rev": "8bc4c0286040786d4276b7ed5f1f5b4d36b53c8a",
+        "rev": "12c9313a7ba94e2ae7bd97980d52b3e3090dadff",
         "type": "github"
       },
       "original": {
@@ -257,7 +256,7 @@
           "nix",
           "noctalia"
         ],
-        "zen-browser": "zen-browser_2"
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -299,31 +298,6 @@
       }
     },
     "zen-browser": {
-      "inputs": {
-        "home-manager": [
-          "nix",
-          "home-manager"
-        ],
-        "nixpkgs": [
-          "nix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1777564084,
-        "narHash": "sha256-O9VRkxg+2j+sh+c73wi4VeIBECoqW2PlnCR9Qe1nQKA=",
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "rev": "d93443c0f6fdb3b179bed68856f322dba4842612",
-        "type": "github"
-      },
-      "original": {
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "type": "github"
-      }
-    },
-    "zen-browser_2": {
       "inputs": {
         "home-manager": [
           "home-manager"
