@@ -16,8 +16,13 @@
     # locale.timeZone      = "Europe/Berlin";
     # locale.defaultLocale = "en_US.UTF-8";
     locale.extraLocale = "de_DE.UTF-8";
-    # locale.keyboard.layout  = "de";
-    # locale.keyboard.variant = "";
+
+    # ── Keyboard ─────────────────────────────────────────────────────────────
+    keyboard = {
+      # layout = "de";
+      # variant = "";
+      qmk.enable = true;
+    };
 
     # ── Users ─────────────────────────────────────────────────────────────────
     users.stateVersion = "26.05";
