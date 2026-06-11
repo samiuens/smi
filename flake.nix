@@ -6,6 +6,7 @@
     nix.url = "github:samiuens/flake";
     nixpkgs.follows = "nix/nixpkgs";
     home-manager.follows = "nix/home-manager";
+    nix-darwin.follows = "nix/nix-darwin";
     disko.follows = "nix/disko";
     noctalia.follows = "nix/noctalia";
     zen-browser = {
@@ -32,12 +33,15 @@
       systems = [
         "x86_64-linux"
         "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
       pkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
 
       userRegistry = import ./users;
       mkHost = nix.lib.mkHost { inherit inputs self userRegistry; } ./hosts;
+      mkDarwinHost = nix.lib.mkDarwinHost { inherit inputs self userRegistry; } ./hosts;
 
       pre-commit-checkFor = forAllSystems (
         system:
@@ -55,6 +59,10 @@
     {
       nixosConfigurations = {
         "smi-nixos" = mkHost "smi-nixos";
+      };
+
+      darwinConfigurations = {
+        "smi-mac" = mkDarwinHost "smi-mac";
       };
 
       formatter = forAllSystems (system: pkgsFor.${system}.nixfmt);
