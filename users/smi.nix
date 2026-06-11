@@ -5,9 +5,11 @@
   hmConfig =
     { pkgs, lib, ... }:
     {
-      imports = lib.optionals pkgs.stdenv.isLinux [
-        ../home/noctalia
+      imports = [
         ../home/programs/browsers/zen
+      ]
+      ++ lib.optionals pkgs.stdenv.isLinux [
+        ../home/noctalia
       ];
 
       config = lib.mkMerge [
@@ -33,28 +35,28 @@
             claude.enable = true;
             ghostty.enable = true;
             keepassxc.enable = true;
+            zen = {
+              enable = true;
+              spaces = {
+                "Persönlich" = {
+                  id = "0597770a-4614-4634-8b27-63a4407577f1";
+                  icon = "👤";
+                  position = 1000;
+                  container = 1;
+                };
+              };
+              containers = {
+                Personal = {
+                  color = "blue";
+                  icon = "circle";
+                  id = 1;
+                };
+              };
+            };
           };
         }
         (lib.mkIf pkgs.stdenv.isLinux {
           smi.programs.chromium.enable = true;
-          smi.programs.zen = {
-            enable = true;
-            spaces = {
-              "Persönlich" = {
-                id = "0597770a-4614-4634-8b27-63a4407577f1";
-                icon = "👤";
-                position = 1000;
-                container = 1;
-              };
-            };
-            containers = {
-              Personal = {
-                color = "blue";
-                icon = "circle";
-                id = 1;
-              };
-            };
-          };
           smi.services.flatpak.packages = [
             "com.bambulab.BambuStudio"
           ];
