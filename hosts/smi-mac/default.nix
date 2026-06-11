@@ -4,7 +4,14 @@
     host.name = "smi-mac";
     locale.timeZone = "Europe/Berlin";
     users.stateVersion = "26.05";
-    homebrew.enable = true;
+    homebrew = {
+      enable = true;
+      casks = [ "bambu-studio" ];
+      brews = [ "mas" ];
+      masApps = {
+        "Xcode" = 497799835;
+      };
+    };
   };
 
   nixpkgs.hostPlatform = "aarch64-darwin";
