@@ -4,6 +4,10 @@
     host.name = "smi-mac";
     locale.timeZone = "Europe/Berlin";
     users.stateVersion = "26.05";
+    nh = {
+      enable = true;
+      flakeDir = "/Users/smi/Entwicklung/nix/nixos";
+    };
     homebrew = {
       enable = true;
       casks = [ "bambu-studio" ];
