@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   inputs,
   ...
 }:
@@ -18,8 +19,8 @@ in
     ./mods.nix
     ./search.nix
     ./spaces.nix
-    ./xdg.nix
-  ];
+  ]
+  ++ lib.optionals pkgs.stdenv.isLinux [ ./xdg.nix ];
 
   options.smi.programs.${name}.enable = lib.mkEnableOption name;
 
