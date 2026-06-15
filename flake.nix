@@ -49,7 +49,10 @@
       } ./hosts;
       mkDarwinHost = nix.lib.mkDarwinHost {
         inherit inputs self userRegistry;
-        extraModules = [ consumerHomeModule ];
+        extraModules = [
+          consumerHomeModule
+          ./modules/darwin
+        ];
       } ./hosts;
 
       pre-commit-checkFor = forAllSystems (
