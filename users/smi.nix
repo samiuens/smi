@@ -3,11 +3,6 @@
   permissionType = "admin";
 
   hmConfig = _: {
-    imports = [
-      ../home/noctalia
-      ../home/programs/browsers/zen
-    ];
-
     smi = {
       programs = {
         zed.enable = true;
@@ -31,6 +26,7 @@
         ghostty.enable = true;
         keepassxc.enable = true;
         chromium.enable = true;
+        aerospace.enable = true;
         zen = {
           enable = true;
           spaces = {
