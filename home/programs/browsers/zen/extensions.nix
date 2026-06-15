@@ -7,8 +7,6 @@
   config = lib.mkIf config.smi.programs.zen.enable {
     programs.zen-browser.policies =
       let
-        # about:debugging#/runtime/this-firefox
-        # attrset: { "<extension-id>" = "<amo-slug>"; }
         mkExtensionSettings = builtins.mapAttrs (
           _extensionId: amoSlug: {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/${amoSlug}/latest.xpi";
