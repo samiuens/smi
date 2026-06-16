@@ -32,7 +32,8 @@
     desktop = {
       enable = true;
       environment = "hyprland";
-      shell = "noctalia";
+      shell = "dms";
+      dms.greeter.configHome = "/home/smi";
     };
 
     # ── Hardware ──────────────────────────────────────────────────────────────
@@ -41,6 +42,9 @@
       bluetooth.enable = true;
       gpu = "amd";
     };
+
+    # ── Programs  ──────────────────────────────────────────────────────────────
+    #programs.valent.enable = true;
 
     # ── Services ──────────────────────────────────────────────────────────────
     services = {

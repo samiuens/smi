@@ -14,10 +14,32 @@
             name = "Sami Arda Ünsay";
             email = "192653549+samiuens@users.noreply.github.com";
           };
-          github = {
+          git = {
             enable = true;
-            username = "samiuens";
+            signing.enable = true;
+            user = {
+              name = "Sami Arda Ünsay";
+              email = "192653549+samiuens@users.noreply.github.com";
+            };
+            github = {
+              enable = true;
+              username = "samiuens";
+            };
           };
+          lazygit.enable = true;
+          direnv.enable = true;
+          comma.enable = true;
+          claude.enable = true;
+          ghostty.enable = true;
+          keepassxc.enable = true;
+          drawio.enable = true;
+          kicad.enable = true;
+          #bitwarden.enable = true;
+          obsidian.enable = true;
+          #opencode.enable = true;
+          #bun.enable = true;
+          #vesktop.enable = true;
+          #zotero.enable = true;
         };
         lazygit.enable = true;
         direnv.enable = true;
@@ -48,9 +70,9 @@
         };
       };
 
-      services.flatpak.packages = [
-        "com.bambulab.BambuStudio"
-      ];
+        services.flatpak.packages = [
+          "com.bambulab.BambuStudio"
+        ];
+      };
     };
-  };
 }
