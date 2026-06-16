@@ -13,7 +13,7 @@
     firstDayOfWeek = -1;
     hideWeatherTimezone = false;
     hideWeatherCityName = false;
-    autoLocate = false;
+    autoLocate = true;
   };
 
   calendar = {
