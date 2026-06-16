@@ -28,7 +28,7 @@
 
       # Disable space rearragment based on recent usage
       mru-spaces = false;
-      
+
       # Disable hot corners
       wvous-bl-corner = 1;
       wvous-br-corner = 1;

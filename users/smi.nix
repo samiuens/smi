@@ -70,9 +70,9 @@
         };
       };
 
-        services.flatpak.packages = [
-          "com.bambulab.BambuStudio"
-        ];
-      };
+      services.flatpak.packages = [
+        "com.bambulab.BambuStudio"
+      ];
     };
+  };
 }

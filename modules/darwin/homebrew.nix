@@ -8,7 +8,7 @@
     };
     taps = [ ];
     brews = [ "mas" ];
-    casks = [ 
+    casks = [
       "linearmouse"
       "orbstack"
       "bambu-studio"
