@@ -35,26 +35,44 @@
           zed.enable = true;
           vscodium = {
             enable = true;
-            profiles.typst = {
-              extensions = with pkgs.vscode-extensions; [
-                jnoortheen.nix-ide
-                myriad-dreamin.tinymist
-                mkhl.direnv
-                pkief.material-icon-theme
-                editorconfig.editorconfig
-                tomoki1207.pdf
-              ];
-              userSettings = {
-                "workbench.iconTheme" = "material-icon-theme";
-                "editor.fontFamily" = "'JetBrains Mono', 'JetBrainsMono Nerd Font', monospace";
-                "editor.fontSize" = 16;
-                "editor.lineHeight" = 2;
-                "files.autoSave" = "onFocusChange";
-                "editor.cursorStyle" = "block";
-                "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
-                "terminal.integrated.fontSize" = 14;
-                "telemetry.telemetryLevel" = "off";
-                "update.mode" = "none";
+            extensions = pkgs.nix4vscode.forVscode [
+              "mkhl.direnv"
+              "PKief.material-icon-theme"
+              "EditorConfig.EditorConfig"
+              "aaron-bond.better-comments"
+              "alefragnani.Bookmarks"
+              "eamodio.gitlens"
+              "seatonjiang.gitmoji-vscode"
+            ];
+            userSettings = {
+              "workbench.iconTheme" = "material-icon-theme";
+              "editor.fontFamily" = "'JetBrains Mono', 'JetBrainsMono Nerd Font', monospace";
+              "editor.fontSize" = 16;
+              "editor.lineHeight" = 2;
+              "files.autoSave" = "onFocusChange";
+              "editor.cursorStyle" = "block";
+              "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
+              "terminal.integrated.fontSize" = 14;
+              "telemetry.telemetryLevel" = "off";
+              "update.mode" = "none";
+            };
+            profiles = {
+              nix = {
+                extensions = pkgs.nix4vscode.forVscode [
+                  "jnoortheen.nix-ide"
+                ];
+              };
+              infrastructure = {
+                extensions = pkgs.nix4vscode.forVscode [
+                  "redhat.ansible"
+                  "pulumi.pulumi-vscode-tools"
+                ];
+              };
+              typst = {
+                extensions = pkgs.nix4vscode.forVscode [
+                  "myriad-dreamin.tinymist"
+                  "tomoki1207.pdf"
+                ];
               };
             };
           };
