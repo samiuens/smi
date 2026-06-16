@@ -27,6 +27,7 @@
         keepassxc.enable = true;
         chromium.enable = true;
         aerospace.enable = true;
+        raycast.enable = true;
         zen = {
           enable = true;
           spaces = {
