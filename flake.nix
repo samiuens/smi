@@ -8,6 +8,8 @@
     home-manager.follows = "nix/home-manager";
     disko.follows = "nix/disko";
     noctalia.follows = "nix/noctalia";
+    dms.follows = "nix/dms";
+    danksearch.follows = "nix/danksearch";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -17,6 +19,7 @@
     };
     nix-flatpak.follows = "nix/nix-flatpak";
     nix-index-database.follows = "nix/nix-index-database";
+    nix4vscode.follows = "nix/nix4vscode";
     git-hooks.follows = "nix/git-hooks";
   };
 
