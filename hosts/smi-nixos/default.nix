@@ -1,4 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
+let
+  fonts = import ../../modules/fonts.nix pkgs;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -34,6 +37,7 @@
       environment = "hyprland";
       shell = "dms";
       dms.greeter.configHome = "/home/smi";
+      fonts.packages = fonts.shared ++ fonts.linux;
     };
 
     # ── Hardware ──────────────────────────────────────────────────────────────
