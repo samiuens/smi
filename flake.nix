@@ -7,6 +7,7 @@
     nixpkgs.follows = "nix/nixpkgs";
     home-manager.follows = "nix/home-manager";
     nix-darwin.follows = "nix/nix-darwin";
+    nix-homebrew.follows = "nix/nix-homebrew";
     disko.follows = "nix/disko";
     noctalia.follows = "nix/noctalia";
     dms.follows = "nix/dms";
