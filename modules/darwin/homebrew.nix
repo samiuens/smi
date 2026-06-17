@@ -1,12 +1,12 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
 
   nix-homebrew = {
     enable = true;
-    enableRosetta = true; # für Intel-Casks auf Apple Silicon
-    user = "smi";
-    autoMigrate = true; # falls Homebrew schon installiert ist
+    enableRosetta = true;
+    user = config.system.primaryUser;
+    autoMigrate = true;
   };
 
   homebrew = {
