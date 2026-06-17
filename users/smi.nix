@@ -26,14 +26,14 @@
         ghostty.enable = true;
         keepassxc.enable = true;
         drawio.enable = true;
-        #kicad.enable = true;
+        # kicad.enable = true;
         obsidian.enable = true;
         # bitwarden.enable = true;
         # opencode.enable = true;
         # bun.enable = true;
         # vesktop.enable = true;
         zotero.enable = true;
-        #chromium.enable = true;
+        # chromium.enable = true;
         aerospace.enable = true;
         raycast.enable = true;
         shottr.enable = true;
