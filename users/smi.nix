@@ -32,7 +32,7 @@
         # opencode.enable = true;
         # bun.enable = true;
         # vesktop.enable = true;
-        # zotero.enable = true;
+        zotero.enable = true;
         #chromium.enable = true;
         aerospace.enable = true;
         raycast.enable = true;
