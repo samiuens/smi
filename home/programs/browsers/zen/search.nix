@@ -34,7 +34,7 @@
           name = "Nix Packages";
           urls = [
             {
-              template = "https://search.nixos.org";
+              template = "https://search.nixos.org/packages";
               params = [
                 {
                   name = "query";
