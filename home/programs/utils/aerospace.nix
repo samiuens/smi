@@ -1,5 +1,7 @@
 {
   smi.programs.aerospace.settings = {
+    config-version = 2;
+
     after-startup-command = [ "layout tiles" ];
 
     start-at-login = true;
