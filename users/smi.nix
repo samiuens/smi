@@ -36,26 +36,24 @@
         #chromium.enable = true;
         aerospace.enable = true;
         raycast.enable = true;
-        /*
-          zen = {
-            enable = true;
-            spaces = {
-              "Persönlich" = {
-                id = "0597770a-4614-4634-8b27-63a4407577f1";
-                icon = "👤";
-                position = 1000;
-                container = 1;
-              };
-            };
-            containers = {
-              Personal = {
-                color = "blue";
-                icon = "circle";
-                id = 1;
-              };
+        zen = {
+          enable = true;
+          spaces = {
+            "Persönlich" = {
+              id = "0597770a-4614-4634-8b27-63a4407577f1";
+              icon = "👤";
+              position = 1000;
+              container = 1;
             };
           };
-        */
+          containers = {
+            Personal = {
+              color = "blue";
+              icon = "circle";
+              id = 1;
+            };
+          };
+        };
       };
     };
   };
