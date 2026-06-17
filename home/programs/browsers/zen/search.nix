@@ -68,6 +68,24 @@
             "@mw"
           ];
         };
+        "homebrew" = {
+          name = "Homebrew";
+          urls = [
+            {
+              template = "https://formulae.brew.sh/";
+              params = [
+                {
+                  name = "search";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
+          icon = "https://brew.sh/assets/img/homebrew.svg";
+          definedAliases = [ "@brew" ];
+        };
+        # Add @g alias to the built-in Google engine (no duplicate)
+        google.metaData.alias = "@g";
 
         # Disable default engines
         bing.metaData.hidden = "true";
