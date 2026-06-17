@@ -23,6 +23,8 @@
       "linearmouse"
       "orbstack"
       "bambu-studio"
+      "keka"
+      "pearcleaner"
       "localsend"
     ];
     masApps = {
