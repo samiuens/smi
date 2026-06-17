@@ -1,6 +1,6 @@
-{ lib, pkgs, ... }:
 {
-  config = lib.mkIf pkgs.stdenv.isLinux {
+  platforms = [ "linux" ];
+  module = _: {
     smi.desktop.noctalia.settings =
       import ./bar.nix
       // import ./dock.nix
