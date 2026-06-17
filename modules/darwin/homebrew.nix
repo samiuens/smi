@@ -17,7 +17,10 @@
       cleanup = "zap";
     };
     taps = [ ];
-    brews = [ "mas" ];
+    brews = [
+      "mas"
+      "watchman"
+    ];
     casks = [
       "ghostty"
       "linearmouse"
