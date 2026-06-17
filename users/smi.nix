@@ -23,7 +23,7 @@
         direnv.enable = true;
         comma.enable = true;
         claude.enable = true;
-        #ghostty.enable = true;
+        ghostty.enable = true;
         keepassxc.enable = true;
         drawio.enable = true;
         #kicad.enable = true;
