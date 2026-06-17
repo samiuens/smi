@@ -19,6 +19,7 @@
     taps = [ ];
     brews = [ "mas" ];
     casks = [
+      "ghostty"
       "linearmouse"
       "orbstack"
       "bambu-studio"
