@@ -36,6 +36,7 @@
         #chromium.enable = true;
         aerospace.enable = true;
         raycast.enable = true;
+        shottr.enable = true;
         zen = {
           enable = true;
           spaces = {
