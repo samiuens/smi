@@ -93,6 +93,7 @@
           buildInputs =
             pre-commit-checkFor.${system}.enabledPackages
             ++ (with pkgsFor.${system}; [
+              just
               nixd
               nil
               statix
