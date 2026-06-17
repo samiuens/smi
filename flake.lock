@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "brew-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781226006,
+        "narHash": "sha256-w4ZTuOnhYiDxjaynrMTASzp802QblBWmo3wpB8wVN4Y=",
+        "owner": "Homebrew",
+        "repo": "brew",
+        "rev": "109191be4988470b51a60a5ef1998520aa24c01b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Homebrew",
+        "ref": "6.0.1",
+        "repo": "brew",
+        "type": "github"
+      }
+    },
     "danksearch": {
       "inputs": {
         "nixpkgs": [
@@ -156,17 +173,18 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nix-flatpak": "nix-flatpak",
+        "nix-homebrew": "nix-homebrew",
         "nix-index-database": "nix-index-database",
         "nix4vscode": "nix4vscode",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia"
       },
       "locked": {
-        "lastModified": 1781651312,
-        "narHash": "sha256-dSF2UfjXGhci1P5luHNbjYqGwjWUngrPfGFtUml3GbY=",
+        "lastModified": 1781689457,
+        "narHash": "sha256-emLJswYWpRXMhZ8juqx9mNv8CkxmMxvKoxbOmVjoA54=",
         "owner": "samiuens",
         "repo": "flake",
-        "rev": "aebc1e4aaf6d244d10ca96775a503672cd4f598d",
+        "rev": "cbc625f7308565a1e249297c7896cf2e93555357",
         "type": "github"
       },
       "original": {
@@ -208,6 +226,24 @@
       "original": {
         "owner": "gmodena",
         "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
+    "nix-homebrew": {
+      "inputs": {
+        "brew-src": "brew-src"
+      },
+      "locked": {
+        "lastModified": 1781389246,
+        "narHash": "sha256-ORqLAo/hoJdsZC7UPAuEHev6S0+XIqKEC7vjo5prz1k=",
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "rev": "de7953a08ed4bb9245be043e468561c17b89130d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
         "type": "github"
       }
     },
@@ -344,6 +380,10 @@
         "nix-flatpak": [
           "nix",
           "nix-flatpak"
+        ],
+        "nix-homebrew": [
+          "nix",
+          "nix-homebrew"
         ],
         "nix-index-database": [
           "nix",
