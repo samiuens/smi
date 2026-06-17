@@ -32,6 +32,14 @@
 
     on-mode-changed = [ ];
 
+    # iOS Simulator (fixed aspect ratio) should float instead of being tiled
+    on-window-detected = [
+      {
+        "if".app-id = "com.apple.iphonesimulator";
+        run = [ "layout floating" ];
+      }
+    ];
+
     key-mapping.preset = "qwerty";
 
     gaps = {
