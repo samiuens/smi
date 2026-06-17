@@ -26,6 +26,7 @@
       "keka"
       "pearcleaner"
       "localsend"
+      "little-snitch"
     ];
     masApps = {
       "Xcode" = 497799835;
