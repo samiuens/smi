@@ -3,6 +3,7 @@
     NSGlobalDomain = {
       #AppleInterfaceStyle = "Dark";
       AppleInterfaceStyleSwitchesAutomatically = true;
+      #AppleReduceDesktopTinting = false;
       AppleKeyboardUIMode = 2;
       KeyRepeat = 2;
       InitialKeyRepeat = 15;
