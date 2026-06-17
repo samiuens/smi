@@ -55,6 +55,10 @@
           };
         };
       };
+
+      config = {
+        linearmouse.enable = true;
+      };
     };
   };
 }
