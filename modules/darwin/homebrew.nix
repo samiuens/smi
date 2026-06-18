@@ -33,6 +33,8 @@
     ];
     masApps = {
       "Xcode" = 497799835;
+      "Amphetamine" = 937984704;
+      "Bitwarden" = 1352778147;
     };
   };
 }
