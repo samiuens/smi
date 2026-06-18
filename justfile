@@ -20,8 +20,8 @@ rebuild:
 # Rebuild the current host against the local flake working copy
 [macos]
 rebuild-local:
-    sudo darwin-rebuild switch --flake .#smi-mac --override-input nix path:../flake
+    sudo darwin-rebuild switch --flake .#smi-mac --override-input nix path:../flake --override-input samiarda path:../samiarda
 
 [linux]
 rebuild-local:
-    NH_FLAKE={{justfile_directory()}} nh os switch -- --override-input nix path:../flake
+    NH_FLAKE={{justfile_directory()}} nh os switch -- --override-input nix path:../flake --override-input samiarda path:../samiarda

@@ -12,6 +12,10 @@
     noctalia.follows = "nix/noctalia";
     dms.follows = "nix/dms";
     danksearch.follows = "nix/danksearch";
+    samiarda = {
+      url = "github:samiuens/samiarda";
+      inputs.nix.follows = "nix";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -22,6 +26,9 @@
     nix-flatpak.follows = "nix/nix-flatpak";
     nix-index-database.follows = "nix/nix-index-database";
     nix4vscode.follows = "nix/nix4vscode";
+    pyproject-nix.follows = "nix/pyproject-nix";
+    uv2nix.follows = "nix/uv2nix";
+    pyproject-build-systems.follows = "nix/pyproject-build-systems";
     git-hooks.follows = "nix/git-hooks";
   };
 
@@ -58,7 +65,6 @@
           ./modules/darwin
         ];
       } ./hosts;
-
       pre-commit-checkFor = forAllSystems (
         system:
         git-hooks.lib.${system}.run {
