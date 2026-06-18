@@ -19,6 +19,7 @@ in
         "aaron-bond.better-comments"
         "mkhl.direnv"
         "eamodio.gitlens"
+        "seatonjiang.gitmoji-vscode"
       ];
 
       userSettings = {
@@ -45,7 +46,8 @@ in
 
         "files.autoSave" = "onFocusChange";
 
-        "git.fetchOnPull" = true;
+        "git.autofetch" = true;
+        "git.confirmSync" = false;
         "telemetry.telemetryLevel" = "off";
         "update.mode" = "none";
         "extensions.autoUpdate" = false;
