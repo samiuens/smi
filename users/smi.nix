@@ -31,6 +31,8 @@
           claude.enable = true;
           comma.enable = true;
           direnv.enable = true;
+          graphify.enable = true;
+          nodejs.enable = true;
           # opencode.enable = true;
 
           # Terminal
