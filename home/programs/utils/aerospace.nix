@@ -46,10 +46,10 @@
       inner.horizontal = 15;
       inner.vertical = 15;
       outer = {
-        left = 20;
-        bottom = 20;
-        top = 20;
-        right = 20;
+        left = 10;
+        bottom = 10;
+        top = 10;
+        right = 10;
       };
     };
 

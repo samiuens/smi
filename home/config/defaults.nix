@@ -3,10 +3,10 @@
   module = _: {
     targets.darwin.defaults = {
       NSGlobalDomain = {
-        #AppleInterfaceStyle = "Dark";
-        AppleInterfaceStyleSwitchesAutomatically = true;
+        AppleInterfaceStyle = "Dark";
+        #AppleInterfaceStyleSwitchesAutomatically = true;
         #AppleReduceDesktopTinting = false;
-        AppleKeyboardUIMode = 2;
+        AppleKeyboardUIMode = 3;
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
         NSNavPanelExpandedStateForSaveMode = true;
