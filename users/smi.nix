@@ -5,6 +5,8 @@
   hmConfig =
     { pkgs, ... }:
     {
+      imports = [ ../home ];
+
       smi = {
         programs = {
           # Editors
