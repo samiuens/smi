@@ -4,13 +4,64 @@
 
   hmConfig =
     { pkgs, ... }:
+    let
+      fromOpenVsx = pkgs.nix4vscode.forOpenVsx;
+      fromVscode = pkgs.nix4vscode.forVscode;
+    in
     {
-      imports = [ ../home ];
-
       smi = {
         programs = {
           # Editors
-          vscodium.enable = true;
+          vscodium = {
+            enable = true;
+            profiles = {
+              default = { };
+
+              nix = {
+                extensions = fromOpenVsx [ "jnoortheen.nix-ide" ];
+                userSettings = {
+                  "nix.enableLanguageServer" = true;
+                  "nix.serverPath" = "nixd";
+                  "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+                };
+              };
+
+              web = {
+                extensions = fromOpenVsx [
+                  "dbaeumer.vscode-eslint"
+                  "esbenp.prettier-vscode"
+                  "bradlc.vscode-tailwindcss"
+                ];
+                userSettings = {
+                  "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+                  "[javascriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+                  "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+                  "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+                  "[json]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+                };
+              };
+
+              infra = {
+                extensions =
+                  fromOpenVsx [
+                    "redhat.vscode-yaml"
+                    "redhat.ansible"
+                  ]
+                  ++ fromVscode [ "pulumi.pulumi-vscode-tools" ];
+                userSettings = {
+                  "redhat.telemetry.enabled" = false;
+                };
+              };
+
+              typst = {
+                extensions = fromOpenVsx [ "myriad-dreamin.tinymist" ];
+                userSettings = {
+                  "[typst]"."editor.defaultFormatter" = "myriad-dreamin.tinymist";
+                  "tinymist.formatterMode" = "typstyle";
+                };
+              };
+            };
+          };
           zed.enable = true;
 
           # Version control

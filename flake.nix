@@ -51,13 +51,19 @@
       pkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
 
       userRegistry = import ./users;
+      consumerHomeModule = {
+        home-manager.sharedModules = [ ./home ];
+      };
       mkHost = nix.lib.mkHost {
         inherit inputs self userRegistry;
-        extraModules = [ ];
+        extraModules = [ consumerHomeModule ];
       } ./hosts;
       mkDarwinHost = nix.lib.mkDarwinHost {
         inherit inputs self userRegistry;
-        extraModules = [ ./modules/darwin ];
+        extraModules = [
+          consumerHomeModule
+          ./modules/darwin
+        ];
       } ./hosts;
       pre-commit-checkFor = forAllSystems (
         system:

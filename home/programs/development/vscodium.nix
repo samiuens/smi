@@ -6,7 +6,6 @@
 }:
 let
   fromOpenVsx = pkgs.nix4vscode.forOpenVsx;
-  fromVscode = pkgs.nix4vscode.forVscode;
 in
 {
   config = lib.mkIf config.smi.programs.vscodium.enable {
@@ -65,54 +64,6 @@ in
         "workbench.tips.enabled" = false;
       };
 
-      profiles = {
-        # Lightweight landing profile: shared only, no stack extensions.
-        default = { };
-
-        nix = {
-          extensions = fromOpenVsx [ "jnoortheen.nix-ide" ];
-          userSettings = {
-            "nix.enableLanguageServer" = true;
-            "nix.serverPath" = "nixd";
-            "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
-          };
-        };
-
-        web = {
-          extensions = fromOpenVsx [
-            "dbaeumer.vscode-eslint"
-            "esbenp.prettier-vscode"
-            "bradlc.vscode-tailwindcss"
-          ];
-          userSettings = {
-            "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-            "[javascriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-            "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-            "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-            "[json]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-          };
-        };
-
-        infra = {
-          extensions =
-            fromOpenVsx [
-              "redhat.vscode-yaml"
-              "redhat.ansible"
-            ]
-            ++ fromVscode [ "pulumi.pulumi-vscode-tools" ];
-          userSettings = {
-            "redhat.telemetry.enabled" = false;
-          };
-        };
-
-        typst = {
-          extensions = fromOpenVsx [ "myriad-dreamin.tinymist" ];
-          userSettings = {
-            "[typst]"."editor.defaultFormatter" = "myriad-dreamin.tinymist";
-            "tinymist.formatterMode" = "typstyle";
-          };
-        };
-      };
     };
   };
 }
