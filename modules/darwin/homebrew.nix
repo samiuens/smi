@@ -30,6 +30,7 @@
       "pearcleaner"
       "localsend"
       "little-snitch"
+      "thaw"
     ];
     masApps = {
       "Xcode" = 497799835;
